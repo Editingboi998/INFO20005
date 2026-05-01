@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amino Z</title>
+    <title>Amino Z-homepage</title>
     <!--<global.css, home.css js files>-->
 </head>
 <body>
@@ -15,9 +15,9 @@
                 <img src="https://static.thenounproject.com/png/683452-200.png">
             </button>
             
-            <div class="brand-logo">
+            <button class="brand-logo" aria-label="Home">
                 <img src="https://www.aminoz.com.au/media/buyshop/default/logo2604a.png" alt="Amino Z Logo">
-            </div>
+            </button>
 
             <div class="header-controls">
                 <button class="search-toggle" aria-label="Search">
@@ -75,11 +75,15 @@
             <h2>Something specific?</h2>
             <form action="{search results page}" method="GET">
                 <div class="search-input">
-                    <span class="search-icon"><img src="https://cdn-icons-png.flaticon.com/512/54/54481.png" alt="Search icon" width="100"> <img src = "https://www.shareicon.net/data/512x512/2015/12/06/683324_arrows_512x512.png" alt="Right arrow" width="1"></span>
                     <input type="text" name="query" placeholder="" aria-label="Search for something specific">
+                    <button type="submit" aria-label="Submit search">
+                        <img src="https://cdn-icons-png.flaticon.com/512/54/54481.png" alt="Search icon" width="10">
+                    </button>
                 </div>
             </form>
         </section>
+
+        
 
     </main>
 
