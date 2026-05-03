@@ -1,0 +1,152 @@
+/* --- checkout layout --- */
+.checkout-page-main {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: sans-serif;
+}
+
+.checkout-step {
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #fff;
+    transition: all 0.3s ease;
+}
+
+/* locked state */
+.checkout-step.locked {
+    opacity: 0.5;
+    pointer-events: none; 
+    background: #f9f9f9;
+}
+
+/* header clickable */
+.step-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1a1a; 
+    color: white;
+    padding: 15px 20px;
+    cursor: default; 
+}
+
+.step-header h2 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+/* edit button */
+.checkout-step .edit-btn {
+    display: none;
+    color: #ff6a00; /* Amino Z Orange */
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.checkout-step.completed .edit-btn {
+    display: block;
+}
+
+.checkout-step.completed .step-header {
+    cursor: pointer;
+}
+
+/* --- animation --- */
+.step-content {
+    display: none; 
+    padding: 20px;
+}
+
+.checkout-step.active .step-content {
+    display: block;
+
+    animation: smoothReveal 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes smoothReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* styling */
+.input-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.input-group input, 
+.input-group textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.payment-row {
+    display: flex;
+    gap: 15px;
+}
+
+.half-width {
+    flex: 1;
+}
+
+.confirm-btn, .place-order-btn {
+    background-color: #ff6a00;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    transition: background-color 0.2s;
+}
+
+.confirm-btn:hover, .place-order-btn:hover {
+    background-color: #e65c00;
+}
+
+/* mobile reponsivemess */
+* {
+    box-sizing: border-box;
+}
+
+.brand-logo img {
+    max-height: 45px;   
+    max-width: 100%;     
+    object-fit: contain; 
+}
+
+@media (max-width: 450px) {
+    
+    .checkout-page-main {
+        margin: 20px auto;
+        padding: 0 15px; 
+    }
+
+    .payment-row {
+        flex-direction: column; 
+        gap: 0px; 
+    }
+}

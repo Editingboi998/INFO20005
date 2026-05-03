@@ -1,0 +1,95 @@
+<!-- cart overlay-->
+<div class="cart-overlay" id="cart-overlay" aria-hidden="true">
+    
+    <!-- cart drawer -->
+    <aside class="cart-drawer" aria-labelledby="cart-heading">
+        
+        <!-- drawer Header -->
+        <header class="cart-header">
+            <h2 id="cart-heading">Your Cart:</h2>
+            <button type="button" class="close-cart-btn" aria-label="Close cart">
+                <img src="'x.png">
+            </button>
+        </header>
+
+        <!-- items list -->
+        <div class="cart-items-container">
+            
+            <!-- item 1 -->
+            <article class="cart-item">
+                <div class="cart-item-image">
+                    <img src="product1 image.png" alt="Amino Z Signature Whey Protein">
+                </div>
+                
+                <div class="cart-item-details">
+                    <h3 class="item-title"><a href="product1.html">Amino Z Signature Whey Protein</a></h3>
+                    <p class="item-variant">Butterscotch</p>
+                    
+                    <div class="item-actions-row">
+                        <div class="quantity-controls cart-qty">
+                            <button type="button" class="qty-btn minus-btn" aria-label="Decrease quantity">-</button>
+                            <input type="number" class="qty-input" value="1" min="1" aria-label="Quantity">
+                            <button type="button" class="qty-btn plus-btn" aria-label="Increase quantity">+</button>
+                        </div>
+                        <span class="item-price">$69.99</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Cart Item 2 -->
+            <article class="cart-item">
+                <div class="cart-item-image">
+                    <img src="product2 image.png" alt="Amino Z Whey Protein Isolate">
+                </div>
+                
+                <div class="cart-item-details">
+                    <h3 class="item-title"><a href="product2.html">Amino Z Whey Protein Isolate</a></h3>
+                    <p class="item-variant">Choc Malt</p>
+                    
+                    <div class="item-actions-row">
+                        <div class="quantity-controls cart-qty">
+                            <button type="button" class="qty-btn minus-btn" aria-label="Decrease quantity">-</button>
+                            <input type="number" class="qty-input" value="1" min="1" aria-label="Quantity">
+                            <button type="button" class="qty-btn plus-btn" aria-label="Increase quantity">+</button>
+                        </div>
+                        <span class="item-price">$84.99</span>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- summary-->
+        <div class="cart-summary-section">
+            <div class="subtotal-row">
+                <span class="subtotal-label">Subtotal:</span>
+                <span class="subtotal-amount">$154.98</span>
+            </div>
+            
+
+            <a href="checkout.html" class="checkout-btn">Checkout</a>
+        </div>
+
+        <!-- also see -->
+        <section class="cart-upsell-section">
+            <h3 class="upsell-heading">Often bought alongside:</h3>
+            
+            <article class="upsell-item">
+                <div class="upsell-image">
+                    <img src="vegan-sample-image.png" alt="Vegan Protein Single Serve Sample">
+                </div>
+                
+                <div class="upsell-details">
+                    <h4 class="upsell-title">Amino Z Vegan Protein Single Serve Sample</h4>
+                    <span class="upsell-price">$4.99</span>
+                </div>
+                
+                <!-- quick add button -->
+                <button type="button" class="quick-add-btn" aria-label="Add Vegan Sample to cart">
+                    <img src="plus.png" alt="Add to cart">
+                </button>
+            </article>
+        </section>
+
+    </aside>
+</div>
