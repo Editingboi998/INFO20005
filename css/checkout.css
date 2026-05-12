@@ -1,9 +1,26 @@
+body {
+
+  background-image: url("https://static.where-e.com/Australia/Amino-Z_c3ce0b183405caf6699c0a434b4b74ae.jpg");
+
+  background-size: cover; 
+
+  background-position: center; 
+
+  background-repeat: no-repeat; 
+
+  background-attachment: fixed; 
+
+  background-color: #cccccc; 
+}
+
+
 /* --- checkout layout --- */
 .checkout-page-main {
     max-width: 600px;
     margin: 40px auto;
     padding: 0 20px;
     font-family: sans-serif;
+    
 }
 
 .checkout-step {
@@ -14,6 +31,8 @@
     background: #fff;
     transition: all 0.3s ease;
 }
+
+
 
 /* locked state */
 .checkout-step.locked {
@@ -65,7 +84,7 @@
 .checkout-step.active .step-content {
     display: block;
 
-    animation: smoothReveal 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation: smoothReveal 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @keyframes smoothReveal {
@@ -110,7 +129,7 @@
 }
 
 .confirm-btn, .place-order-btn {
-    background-color: #ff6a00;
+    background-color: #50817F;
     color: white;
     border: none;
     padding: 12px 20px;

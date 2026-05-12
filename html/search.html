@@ -4,63 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search - Amino Z</title>
-    <!--<global.css, home.css js files>-->
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/search.css">
 </head>
 <body>
 
-<!-- search header -->
     <header class="search-header">
-        <form action="results page link" method="GET" class="active-search-form">
+        <form action="results.html" method="GET" class="active-search-form">
             
-            <div class="search-bar-wrapper">
-
-                <!-- back arrow -->
-                <a href="homepage link*" class="back-button" aria-label="Go back">
-                    <img src="https://www.clipartmax.com/png/middle/435-4358669_free-png-download-back-arrow-icon-svg-png-images-background-android-left.png" alt="Back arrow icon" width="10">
+            <div class="search-header-wrapper">
+                
+                <a href="index.html" class="back-arrow" aria-label="Go back">
+                    <img src="https://www.shareicon.net/data/512x512/2015/12/06/683324_arrows_512x512.png" alt="Back" style="transform: scaleX(-1);">
                 </a>
-            
                 
-                <!-- typing box-->
-                <input type="text" name="query" placeholder="search for products" aria-label="Search query" autofocus>
-
-                <!-- search icon-->
-                <span class="search-icon" aria-hidden="true">
-                   <button type="submit" aria-label="Submit search">
-                        <img src="https://cdn-icons-png.flaticon.com/512/54/54481.png" alt="Search icon" width="10">
+                <div class="input-container" style="flex-grow: 1; display: flex; align-items: center; position: relative;">
+                    
+                    <input type="text" id="main-search-bar" name="query" placeholder="Search for products..." aria-label="Search query" style="width: 100%;" autofocus>
+                    
+                    <button type="button" id="clear-btn" class="clear-search-btn" aria-label="Clear search">
+                        ✕
                     </button>
-                </span>
+                    
+                </div>
                 
-                
+                <button type="submit" class="search-icon" aria-label="Submit search" style="background: none; border: none;">
+                    <img src="https://cdn-icons-png.flaticon.com/512/54/54481.png" alt="Search icon">
+                </button>
                 
             </div>
             
         </form>
     </header>
-    <!-- main-->
-    <main>
+    
+    <main class="search-page-main">
         
-        <section class="popular-searches">
-            <h2>Popular searches:</h2>
+        <section class="popular-searches-section">
+            <h1>Popular searches:</h1>
             
-            <ul>
+            <ul class="search-suggestions-list">
                 <li>
-                    <a href="protein results link">Protein</a>
+                    <a href="results.html">Protein</a>
                 </li>
                 <li>
-                    <a href="creatine results link">Creatine</a>
+                    <a href="results.html">Creatine</a>
                 </li>
                 <li>
-                    <a href="electrolytes results link">Electrolytes</a>
+                    <a href="results.html">Electrolytes</a>
                 </li>
                 <li>
-                    <a href="pre-workout results link">Pre-Workout</a>
+                    <a href="results.html">Pre-Workout</a>
                 </li>
             </ul>
         </section>
-
+        
     </main>
 
-    
-    <!-- app.js -->
+    <script src="../js/search.js"></script>
+
 </body>
 </html>

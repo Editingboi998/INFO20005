@@ -1,0 +1,18 @@
+/* */
+:root {
+    /* Amino Z Brand Colors */
+    --bg-dark: #1a1e21;
+    --brand-orange: #ff6a00;
+    --brand-teal: #78a8a9;
+    
+    /* Filters to change black icons to brand colors */
+    --filter-teal: invert(68%) sepia(13%) saturate(1142%) hue-rotate(137deg) brightness(91%) contrast(85%);
+    --filter-orange: invert(45%) sepia(91%) saturate(3015%) hue-rotate(9deg) brightness(101%) contrast(106%);
+}
+
+body {
+    background-color: var(--bg-dark); 
+    color: white;                 
+    margin: 0;                     
+    font-family: 'Arial', sans-serif; 
+}
