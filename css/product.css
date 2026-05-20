@@ -1,0 +1,255 @@
+/* base resets */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: #7f9a9d;
+    color: #000;
+}
+
+/* header */
+header {
+    background-color: #1a1c21;
+    padding: 15px 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-toggle img, .search-toggle img, .cart-link img {
+    width: 25px;
+    height: 25px;
+    filter: invert(1); /* Makes the black icons white */
+}
+
+.brand-logo img {
+    height: 30px;
+}
+
+.header-controls {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+/* main */
+.product-page-main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* product */
+.product-showcase {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.product-title {
+    font-family: Impact, "Arial Black", sans-serif;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.product-image-container {
+    background-color: white;
+    padding: 20px;
+    max-width: 350px;
+    margin: 0 auto 20px auto;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.product-image-container img {
+    width: 100%;
+    display: block;
+}
+
+.product-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* product form */
+.product-actions {
+    margin-bottom: 40px;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+#flavor-select {
+    background-color: #222428;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.action-row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    background-color: #222428;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.qty-btn {
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.qty-btn:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+#quantity-input {
+    width: 40px;
+    text-align: center;
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+#quantity-input::-webkit-outer-spin-button,
+#quantity-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.add-to-cart-btn {
+    background-color: #222428;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+/* product info */
+.product-information {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.info-accordion {
+    background-color: #222428;
+    color: white;
+    border-radius: 4px;
+}
+
+.info-accordion summary {
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none; /* Removes default triangle arrow */
+}
+
+/* Removes default triangle arrow in Safari */
+.info-accordion summary::-webkit-details-marker {
+    display: none;
+}
+
+.arrow-icon img {
+    width: 15px;
+    filter: invert(1);
+    transition: transform 0.3s ease;
+}
+
+/* rotates custom arrow icon when the details panel is open */
+.info-accordion[open] .arrow-icon img {
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    background-color: rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    line-height: 1.5;
+}
+
+/* footer */
+footer {
+    background-color: #000000;
+    color: white;
+    padding: 60px 20px;
+    margin-top: 50px;
+}
+
+.footer-section {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.info-column h3, .footer-column h3 {
+    font-family: Impact, "Arial Black", sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.info-column ul, .footer-column ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.info-column a, .footer-column a {
+    color: #a0a0a0;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.info-column a:hover, .footer-column a:hover {
+    color: white;
+}
