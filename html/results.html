@@ -4,175 +4,161 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Results: Protein - Amino Z</title>
-    <!-- global.css, js links -->
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/results.css">
 </head>
 <body>
 
-    <!-- header--> 
     <header>
-        <nav>
+        <nav aria-label="Main Navigation" class="top-nav-bar">
             <button class="menu-toggle" aria-label="Open Menu">
-                <img src="https://static.thenounproject.com/png/683452-200.png">
+                <img src="https://static.thenounproject.com/png/683452-200.png" alt="Menu icon">
             </button>
             
-            <div class="brand-logo">
-                <button class="brand-logo" aria-label="Home">
+            <a href="homepage.html" class="brand-logo" aria-label="Home">
                 <img src="https://www.aminoz.com.au/media/buyshop/default/logo2604a.png" alt="Amino Z Logo">
-            </button>
-            </div>
+            </a>
 
-            <div class="header-controls">
-                <button class="search-toggle" aria-label="Search">
-                    <img src="https://cdn-icons-png.flaticon.com/512/54/54481.png" alt="Search icon" width="100">
-                </button>
-                <a href="cart.html" class="cart-link" aria-label="Cart">
-                    <img src="https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/all-3/shopping-cart-9xhllmo2cb79djc9j7b5kb.png/shopping-cart-pe974q2wd8bzu5cueg3qr.png?_a=DATAiZAAZAA0" alt="Cart icon" width="100">
-                </a>
+            <div class="header-search-container">
+                <img src="https://cdn-icons-png.flaticon.com/512/54/54481.png" alt="Search icon" class="search-glass-icon">
+                <input type="text" placeholder="" aria-label="Search">
             </div>
+            
+            <a href="cart.html" class="cart-link" aria-label="Cart">
+                <img src="https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/all-3/shopping-cart-9xhllmo2cb79djc9j7b5kb.png/shopping-cart-pe974q2wd8bzu5cueg3qr.png?_a=DATAiZAAZAA0" alt="Cart icon">
+            </a>
         </nav>
     </header>
 
-    <!-- main-->
-    <main>
+    <main class="results-page-main">
         
-        <!-- results header and dropdown menu--> -->
         <section class="results-header-section">
-            <h1>Showing results for: Protein</h1>
-            
-            <div class="sort-dropdown-group">
-                <label for="sort-filter">Sort by:</label>
-
-                <select id="sort-filter" name="sort">
-                    <option value-"relevance">Relevance</option>
-                    <option value="popularity">Popularity</option>
-                    <option value="price-low">Price: Low to High</option>
-                    <option value="price-high">Price: High to Low</option>
-                    <option value="rating">Highest Rated</option>
-                </select>
+            <div class="content-wrapper">
+                <h1>Showing results for: Protein</h1>
+                
+                <div class="sort-dropdown-group">
+                    <label for="sort-filter">Sort by:</label>
+                    <select id="sort-filter" name="sort">
+                        <option value="popularity">Popularity</option>
+                        <option value="relevance">Relevance</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="rating">Highest Rated</option>
+                    </select>
+                </div>
             </div>
         </section>
 
-        <!-- product list -->
-        <section class="product-results-list">
-            
-            <!-- product 1 -->
-            <article class="product-card">
-                <div class="product-image">
-                    <img src="product1" alt="Amino Z Signature Whey Protein bag">
-                </div>
-                <div class="product-details">
-                    <h2><a href="product.html">Amino Z Signature Whey Protein</a></h2>
-                    <span class="price">$69.99</span>
-                </div>
-            </article>
+        <section class="product-grid-band">
+            <div class="content-wrapper">
+                <div class="product-results-list">
+                    
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="https://www.aminoz.com.au/media/catalog/product/cache/1/thumbnail/1500x1500/9df78eab33525d08d6e5fb8d27136e95/a/m/aminoz_1kg_pouchmockup_chocmaltmemories_8.jpg" alt="Amino Z Signature Whey Protein">
+                        </div>
+                        <div class="product-details">
+                            <h2><a href="product.html">Amino Z Signature Whey Protein</a></h2>
+                            <span class="price">$69.99</span>
+                        </div>
+                    </article>
 
-            <!-- product 2 -->
-            <article class="product-card">
-                <div class="product-image">
-                    <img src="product2" alt="Amino Z Whey Protein Isolate bag">
-                </div>
-                <div class="product-details">
-                    <h2><a href="product2.html">Amino Z Whey Protein Isolate</a></h2>
-                    <span class="price">$84.99</span>
-                </div>
-            </article>
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="https://www.aminoz.com.au/media/catalog/product/cache/1/thumbnail/1500x1500/9df78eab33525d08d6e5fb8d27136e95/a/m/aminoz_1kg_pouchmockup_casein-chocolate_6.jpg" alt="Amino Z Casein Protein">
+                        </div>
+                        <div class="product-details">
+                            <h2><a href="product.html">Amino Z Casein Protein</a></h2>
+                            <span class="price">$69.99</span>
+                        </div>
+                    </article>
 
-            <!-- product 3 -->
-            <article class="product-card">
-                <div class="product-image">
-                    <img src="product3" alt="Amino Z Vegan Protein bag">
-                </div>
-                <div class="product-details">
-                    <h2><a href="product3.html">Amino Z Vegan Protein</a></h2>
-                    <span class="price">$69.99</span>
-                </div>
-            </article>
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="https://www.aminoz.com.au/media/catalog/product/cache/1/thumbnail/1500x1500/9df78eab33525d08d6e5fb8d27136e95/a/m/aminoz_1kg_pouchmockup_brigadeiro.jpg"alt="Amino Z Whey Protein Isolate">
+                        </div>
+                        <div class="product-details">
+                            <h2><a href="product.html">Amino Z Whey Protein Isolate</a></h2>
+                            <span class="price">$84.99</span>
+                        </div>
+                    </article>
 
-            <!-- product 4 -->
-            <article class="product-card">
-                <div class="product-image">
-                    <img src="product4" alt="Amino Z WPI Single Serve bottle">
-                </div>
-                <div class="product-details">
-                    <h2><a href="product4.html">Amino Z Whey Protein Isolate Single Serve Sample</a></h2>
-                    <span class="price">$5.99</span>
-                </div>
-            </article>
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="https://www.aminoz.com.au/media/catalog/product/cache/1/thumbnail/1500x1500/9df78eab33525d08d6e5fb8d27136e95/c/o/complete_pre_workout_single_serve_sample.png" alt="WPI Single Serve Sample">
+                        </div>
+                        <div class="product-details">
+                            <h2><a href="product.html">Amino Z Whey Protein Isolate Single Serve Sample</a></h2>
+                            <span class="price">$5.99</span>
+                        </div>
+                    </article>
 
-            <!-- product 5 -->
-            <article class="product-card">
-                <div class="product-image">
-                    <img src="product5" alt="Amino Z Vegan Single Serve bottle">
-                </div>
-                <div class="product-details">
-                    <h2><a href="product5.html">Amino Z Vegan Protein Single Serve Sample</a></h2>
-                    <span class="price">$4.99</span>
-                </div>
-            </article>
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="https://www.aminoz.com.au/media/catalog/product/cache/1/thumbnail/1500x1500/9df78eab33525d08d6e5fb8d27136e95/c/o/copy_of_aminoz_1kg_pouchmockup_aminoz_veganprotein_chocolate_2.jpg" alt="Amino Z Vegan Protein">
+                        </div>
+                        <div class="product-details">
+                            <h2><a href="product.html">Amino Z Vegan Protein</a></h2>
+                            <span class="price">$69.99</span>
+                        </div>
+                    </article>
 
-            <!-- product 6 -->
-            <article class="product-card">
-                <div class="product-image">
-                    <img src="product6" alt="Amino Z Casein Protein bag">
-                </div>
-                <div class="product-details">
-                    <h2><a href="product6.html">Amino Z Casein Protein</a></h2>
-                    <span class="price">$74.99</span>
-                </div>
-            </article>
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="https://www.aminoz.com.au/media/catalog/product/cache/1/thumbnail/1500x1500/9df78eab33525d08d6e5fb8d27136e95/v/e/vegan_protein_single_serve_sample.jpg" alt="Vegan Single Serve Sample">
+                        </div>
+                        <div class="product-details">
+                            <h2><a href="product.html">Amino Z Vegan Protein Single Serve Sample</a></h2>
+                            <span class="price">$4.99</span>
+                        </div>
+                    </article>
 
-            
-
+                </div>
+            </div>
         </section>
 
-        <!-- pagination -->
-        <nav class="pagination-controls" aria-label="Pagination Navigation">
-            <button class="page-arrow prev-arrow" aria-label="Previous Page">
-                <img src="{prev-arrow.png}" alt="Previous Page">
-            </button>
-            
-            <span class="page-indicator">1/5</span>
-            
-            <button class="page-arrow next-arrow" aria-label="Next Page">
-                <img src="{next-arrow.png}" alt="Next Page">
-            </button>
-        </nav>
+        <section class="pagination-section">
+            <div class="content-wrapper">
+                <nav class="pagination-controls" aria-label="Pagination Navigation">
+                    <a href="#" class="page-text prev-page">Previous page</a>
+                    <span class="page-indicator">Page 1 out of 5</span>
+                    <a href="#" class="page-text next-page">Next page</a>
+                </nav>
+            </div>
+        </section>
 
     </main>
 
-  <!-- footer -->
     <footer>
         <div class="footer-section">
             
-            <!-- info -->
-            <div class="info-column">
+            <nav class="info-column" aria-label="Information Links">
                 <h3>Information:</h3>
                 <ul>
-                    <li><a href="{about link}">About</a></li>
-                    <li><a href="{shipping link}">Shipping & Delivery</a></li>
-                    <li><a href="{privacy link}">Privacy Policy</a></li>
-                    <li><a href="{ambassador link}">Ambassador Application</a></li>
-                    <li><a href="{affiliate link}">Affiliate Application</a></li>
-                    <li><a href="{sustainability link}">Sustainability & the Environment</a></li>
-                    <li><a href="{terms link}">Terms & Conditions</a></li>
-                    <li><a href="{subscribe link}">Subscribe & Save</a></li>
-                    <li><a href="{compare link}">Compare Supplements</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Shipping & Delivery</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Ambassador Application</a></li>
+                    <li><a href="#">Affiliate Application</a></li>
+                    <li><a href="#">Sustainability & the Environment</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Subscribe & Save</a></li>
+                    <li><a href="#">Compare Supplements</a></li>
                 </ul>
-            </div>
+            </nav>
 
-            <!-- customer service -->
-            <div class="footer-column">
+            <nav class="footer-column" aria-label="Customer Service Links">
                 <h3>Customer Service:</h3>
                 <ul>
-                    <li><a href="{contact link}">Contact Us</a></li>
-                    <li><a href="{visit link}">Visit Us</a></li>
-                    <li><a href="{returns link}">Returns</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Visit Us</a></li>
+                    <li><a href="#">Returns</a></li>
                 </ul>
-            </div>
+            </nav>
 
         </div>
     </footer>
 
-    <!-- app.js -->
+    <script src="../js/results.js" defer></script>
 </body>
 </html>

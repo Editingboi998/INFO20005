@@ -33,7 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     nextStep.classList.add('active');
                 }
             }
-        });
+
+});        });
     });
 
     // going back to edit
@@ -56,5 +57,3 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-
-});

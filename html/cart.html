@@ -1,95 +1,114 @@
-<!-- cart overlay-->
-<div class="cart-overlay" id="cart-overlay" aria-hidden="true">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart - Amino Z</title>
+    <link rel="stylesheet" href="../css/cart.css">
+</head>
+<body>
+
+<div class="cart-overlay active" id="cart-overlay" aria-hidden="false">
     
-    <!-- cart drawer -->
     <aside class="cart-drawer" aria-labelledby="cart-heading">
         
-        <!-- drawer Header -->  
         <header class="cart-header">
             <h2 id="cart-heading">Your Cart:</h2>
             <button type="button" class="close-cart-btn" aria-label="Close cart">
-                <img src="'x.png">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="1.5">
+                    <path d="M18 6L6 18M6 6l12 12"></path>
+                </svg>
             </button>
         </header>
 
-        <!-- items list -->
         <div class="cart-items-container">
             
-            <!-- item 1 -->
-            <article class="cart-item">
+            <article class="cart-item" data-price="69.99">
                 <div class="cart-item-image">
-                    <img src="product1 image.png" alt="Amino Z Signature Whey Protein">
+                    <img src="https://www.aminoz.com.au/media/catalog/product/cache/1/thumbnail/1500x1500/9df78eab33525d08d6e5fb8d27136e95/a/m/aminoz_1kg_pouchmockup_chocmaltmemories_8.jpg" alt="Amino Z Signature Whey Protein">
                 </div>
                 
                 <div class="cart-item-details">
-                    <h3 class="item-title"><a href="product1.html">Amino Z Signature Whey Protein</a></h3>
-                    <p class="item-variant">Butterscotch</p>
+                    <h3 class="item-title"><a href="product.html">Amino Z Signature Whey Protein 1kg - Butterscotch</a></h3>
                     
-                    <div class="item-actions-row">
-                        <div class="quantity-controls cart-qty">
-                            <button type="button" class="qty-btn minus-btn" aria-label="Decrease quantity">-</button>
-                            <input type="number" class="qty-input" value="1" min="1" aria-label="Quantity">
-                            <button type="button" class="qty-btn plus-btn" aria-label="Increase quantity">+</button>
+                    <div class="item-bottom-row">
+                        <div class="qty-wrapper">
+                            <span class="qty-label">Quantity:</span>
+                            <div class="quantity-controls">
+                                <button type="button" class="qty-btn minus-btn" aria-label="Decrease quantity">-</button>
+                                <input type="number" class="qty-input" value="1" min="1" aria-label="Quantity">
+                                <button type="button" class="qty-btn plus-btn" aria-label="Increase quantity">+</button>
+                            </div>
                         </div>
-                        <span class="item-price">$69.99</span>
+                        <div class="item-total">Total: $<span class="line-total">69.99</span></div>
                     </div>
                 </div>
             </article>
 
-            <!-- Cart Item 2 -->
-            <article class="cart-item">
+            <article class="cart-item" data-price="84.99">
                 <div class="cart-item-image">
-                    <img src="product2 image.png" alt="Amino Z Whey Protein Isolate">
+                    <img src="https://www.aminoz.com.au/media/catalog/product/cache/1/image/1500x1500/9df78eab33525d08d6e5fb8d27136e95/a/m/amino-z-whey-protein-isolate-wpi-1kg-aussie-choc-malt-new.jpg" alt="Amino Z Whey Protein Isolate">
                 </div>
                 
                 <div class="cart-item-details">
-                    <h3 class="item-title"><a href="product2.html">Amino Z Whey Protein Isolate</a></h3>
-                    <p class="item-variant">Choc Malt</p>
+                    <h3 class="item-title"><a href="product.html">Amino Z Whey Protein Isolate 1kg - Choc Malt</a></h3>
                     
-                    <div class="item-actions-row">
-                        <div class="quantity-controls cart-qty">
-                            <button type="button" class="qty-btn minus-btn" aria-label="Decrease quantity">-</button>
-                            <input type="number" class="qty-input" value="1" min="1" aria-label="Quantity">
-                            <button type="button" class="qty-btn plus-btn" aria-label="Increase quantity">+</button>
+                    <div class="item-bottom-row">
+                        <div class="qty-wrapper">
+                            <span class="qty-label">Quantity:</span>
+                            <div class="quantity-controls">
+                                <button type="button" class="qty-btn minus-btn" aria-label="Decrease quantity">-</button>
+                                <input type="number" class="qty-input" value="1" min="1" aria-label="Quantity">
+                                <button type="button" class="qty-btn plus-btn" aria-label="Increase quantity">+</button>
+                            </div>
                         </div>
-                        <span class="item-price">$84.99</span>
+                        <div class="item-total">Total: $<span class="line-total">84.99</span></div>
                     </div>
                 </div>
             </article>
 
         </div>
 
-        <!-- summary-->
         <div class="cart-summary-section">
             <div class="subtotal-row">
-                <span class="subtotal-label">Subtotal:</span>
-                <span class="subtotal-amount">$154.98</span>
+                <span class="subtotal-label">Subtotal: $<span id="grand-total">154.98</span></span>
             </div>
             
-
             <a href="checkout.html" class="checkout-btn">Checkout</a>
         </div>
 
-        <!-- also see -->
-        <section class="cart-upsell-section">
-            <h3 class="upsell-heading">Often bought alongside:</h3>
-            
-            <article class="upsell-item">
-                <div class="upsell-image">
-                    <img src="vegan-sample-image.png" alt="Vegan Protein Single Serve Sample">
-                </div>
+        <section class="upsell-section">
+            <h3 class="upsell-heading">Products you might like:</h3>
+            <div class="upsell-grid">
                 
-                <div class="upsell-details">
-                    <h4 class="upsell-title">Amino Z Vegan Protein Single Serve Sample</h4>
-                    <span class="upsell-price">$4.99</span>
-                </div>
-                
-                <!-- quick add button -->
-                <button type="button" class="quick-add-btn" aria-label="Add Vegan Sample to cart">
-                    <img src="plus.png" alt="Add to cart">
-                </button>
-            </article>
+                <article class="upsell-item">
+                    <div class="upsell-image">
+                        <img src="https://www.aminoz.com.au/media/catalog/product/cache/1/thumbnail/1500x1500/9df78eab33525d08d6e5fb8d27136e95/s/a/sample_10.jpg" alt="Vegan Sample">
+                    </div>
+                    <div class="upsell-details">
+                        <h4>Amino Z Vegan Sample</h4>
+                        <span class="upsell-price">$4.99</span>
+                    </div>
+                    <button type="button" class="quick-add-btn" aria-label="Add to cart">+</button>
+                </article>
+
+                <article class="upsell-item">
+                    <div class="upsell-image">
+                        <img src="https://www.aminoz.com.au/media/catalog/product/cache/1/thumbnail/1500x1500/9df78eab33525d08d6e5fb8d27136e95/c/o/complete_pre_workout_single_serve_sample.png" alt="WPI Sample">
+                    </div>
+                    <div class="upsell-details">
+                        <h4>Amino Z WPI Sample</h4>
+                        <span class="upsell-price">$5.99</span>
+                    </div>
+                    <button type="button" class="quick-add-btn" aria-label="Add to cart">+</button>
+                </article>
+
+            </div>
         </section>
 
     </aside>
 </div>
+
+<script src="../js/cart.js"></script>
+</body>
+</html>
