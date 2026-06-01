@@ -1,10 +1,12 @@
-/*search page */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Teko:wght@400;600;700&display=swap');
+
 .search-page-main {
     max-width: 600px;
     margin: 0 auto;
     background-color: var(--bg-dark); 
     min-height: 100vh;
     padding-bottom: 40px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 /* search bar */
@@ -36,13 +38,15 @@
 
 /* popular search */
 .popular-searches-section {
-    padding: 40px 20px;
+    padding: 50px 35px;
 }
 
 .popular-searches-section h1 {
     color: white;
     font-size: 1.8rem;
     margin-bottom: 40px;
+    padding: 30px 0;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .search-suggestions-list {
@@ -67,7 +71,7 @@
 .search-suggestions-list a:active,
 .search-suggestions-list a.is-touched {
     color: var(--brand-orange);
-    transform: translateX(10px); 
+    transform: translateX(15px); 
 }
 
 /* slide in animation for search suggestions */

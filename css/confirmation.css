@@ -1,28 +1,40 @@
-/* Center the card perfectly in the middle of the screen */
-.confirmation-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 75vh; 
-    padding: 20px;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Teko:wght@400;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(135deg, #9bbbc0 0%, #759c9d 100%); 
+    background-attachment: fixed;
+    font-family: 'Montserrat', sans-serif;
+    color: #111;
 }
 
 .brand-logo img {
-    max-height: 40px; 
+    max-height: 45px; 
     width: auto;  
     object-fit: contain;
 }
 
+.confirmation-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 85vh; 
+    padding: 20px;
+}
+
 .success-message {
-    background-color: #111416; 
-    border: 1px solid var(--brand-teal);
-    border-top: 5px solid var(--brand-orange); 
-    border-radius: 8px;
-    padding: 50px 30px;
+    background-color: rgba(255, 255, 255, 0.95); 
+    border-top: 6px solid #ff6a00; 
+    border-radius: 12px;
+    padding: 50px 40px;
     text-align: center;
     max-width: 500px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-    
+    width: 100%;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15); 
     opacity: 0;
     animation: slideUpFade 0.6s ease-out forwards;
 }
@@ -32,58 +44,64 @@
     100% { opacity: 1; transform: translateY(0); }
 }
 
-
 .success-message h1 {
-    color: var(--brand-orange);
+    color: #111;
     margin-bottom: 15px;
-    font-size: 2rem;
+    font-family: 'Teko', sans-serif;
+    font-size: 3rem;
+    letter-spacing: 1px;
+    line-height: 1.1;
 }
 
 .success-message p {
-    color: var(--text-light);
+    color: #333;
     margin-bottom: 35px;
     line-height: 1.6;
+    font-size: 1.1rem;
+    font-weight: 600;
 }
 
 .back-home-btn {
     display: inline-block;
-    background-color: var(--brand-orange);
+    background-color: #ff6a00; 
     color: white;
     text-decoration: none;
-    padding: 15px 30px;
-    border-radius: 4px;
-    font-weight: bold;
+    padding: 15px 35px;
+    border-radius: 6px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
     text-transform: uppercase;
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Hover effects for the button */
 .back-home-btn:hover {
     background-color: #e65c00;
     transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(255, 106, 0, 0.3);
+    box-shadow: 0 6px 20px rgba(255, 106, 0, 0.4);
 }
 
-/* checkmark */
+.back-home-btn:active {
+    transform: translateY(1px);
+}
+
 .check-circle {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    background-color: rgba(120, 168, 169, 0.1); 
-    border: 3px solid var(--brand-teal);
+    background-color: rgba(39, 174, 96, 0.1); 
+    border: 3px solid #27ae60; 
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto 20px auto; 
-    
-
+    margin: 0 auto 25px auto; 
     transform: scale(0);
     animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
     animation-delay: 0.3s; 
 }
 
 .check-circle span {
-    color: var(--brand-teal);
+    color: #27ae60; 
     font-size: 40px;
     font-weight: bold;
 }

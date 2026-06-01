@@ -33,59 +33,69 @@
     <main class="product-page-main">
         <div class="page-content-wrapper">
 
-            <section class="product-showcase">
-                <h1 class="product-title">Amino Z Signature Whey Protein Isolate WPI</h1>
+            <div class="split-layout-container">
                 
-                <div class="product-hero-layout">
+                <div class="product-visuals">
                     <div class="product-image-container">
-                        <img src="https://www.aminoz.com.au/media/catalog/product/cache/1/thumbnail/1500x1500/9df78eab33525d08d6e5fb8d27136e95/a/m/aminoz_1kg_pouchmockup_brigadeiro.jpg" alt="Amino Z Signature Whey Protein 1kg Bag">
+                        <img id="main-product-image" src="https://www.aminoz.com.au/media/catalog/product/cache/1/thumbnail/1500x1500/9df78eab33525d08d6e5fb8d27136e95/a/m/aminoz_1kg_pouchmockup_brigadeiro.jpg" alt="Amino Z Signature Whey Protein Isolate 1kg Bag">
                     </div>
-                    
-                    <ul class="product-features-list">
-                        <li>✓ Aussie processed in our licensed Sydney facility</li>
-                        <li>✓ Australian Owned Brand</li>
-                        <li>✓ 110% Guarantee</li>
-                        <li>✓ Recyclable scoop included</li>
-                        <li>✓ 87% less plastic in packaging</li>
-                        <li>✓ Naturally Sweetened</li>
-                        <li>✓ Naturally Flavoured</li>
-                    </ul>
                 </div>
-            </section>
 
-            <section class="product-actions">
-                <form id="add-to-cart-form" class="action-row">
+                <div class="product-details-box">
                     
-                    <div class="product-price">
-                        <strong><span id="dynamic-price">$84.99</span>/kg</strong>
-                    </div>
-
-                    <div class="input-group">
-                        <label for="flavor-select">Flavour:</label>
-                        <select id="flavor-select" name="flavor" required>
-                            <option value="butterscotch">Butterscotch</option>
-                            <option value="chocolate">Chocolate</option>
-                            <option value="vanilla">Vanilla</option>
-                        <!-- update options -->
-                        </select>
-                    </div>
-
-                    <div class="input-group quantity-group">
-                        <label for="quantity-input">Quantity:</label>
-                        <div class="quantity-controls">
-                            <button type="button" id="qty-minus" class="qty-btn" aria-label="Decrease quantity">-</button>
-                            <input type="number" id="quantity-input" name="quantity" value="1" min="1" aria-label="Product quantity">
-                            <button type="button" id="qty-plus" class="qty-btn" aria-label="Increase quantity">+</button>
+                    <div class="product-header-group">
+                        <div class="product-header">
+                            <div class="review-stars">★★★★★ <span class="review-count">(892 Reviews)</span></div>
+                            <h1 class="product-title" id="product-name">Amino Z Signature Whey Protein Isolate WPI</h1>
+                            <div class="product-price">
+                                <strong><span id="dynamic-price">$84.99</span></strong><span class="unit-label">/ 1kg</span>
+                            </div>
                         </div>
+
+                        <ul class="product-features-list">
+                            <li>✓ Aussie processed in our licensed Sydney facility</li>
+                            <li>✓ Australian Owned Brand</li>
+                            <li>✓ 110% Guarantee</li>
+                            <li>✓ Recyclable scoop included</li>
+                            <li>✓ 87% less plastic in packaging</li>
+                            <li>✓ Naturally Sweetened</li>
+                            <li>✓ Naturally Flavoured</li>
+                        </ul>
                     </div>
 
-                    <button type="submit" class="add-to-cart-btn">ADD</button>
-                    
-                </form>
-            </section>
+                    <form id="add-to-cart-form" class="purchase-box">
+                        <div class="action-row">
+                            
+                            <div class="input-group">
+                                <label for="flavor-select">Flavour</label>
+                                <select id="flavor-select" name="flavor" required>
+                                    <option value="Butterscotch">Butterscotch</option>
+                                    <option value="Chocolate">Chocolate</option>
+                                    <option value="Vanilla">Vanilla</option>
+                                </select>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="quantity-input">Quantity</label>
+                                <div class="quantity-controls">
+                                    <button type="button" id="qty-minus" class="qty-btn">-</button>
+                                    <input type="number" id="quantity-input" name="quantity" value="1" min="1">
+                                    <button type="button" id="qty-plus" class="qty-btn">+</button>
+                                </div>
+                            </div>
+
+                            <div class="input-group flex-grow">
+                                <label class="hidden-label">Action</label>
+                                <button type="submit" class="add-to-cart-btn">ADD TO CART</button>
+                            </div>
+
+                        </div>
+                    </form>
+
+                </div>
+            </div>
 
             <section class="product-information">
-                
                 <details class="info-accordion" open>
                     <summary>Product Overview <span class="arrow-icon">▼</span></summary>
                     <div class="accordion-content">
@@ -96,14 +106,14 @@
 
                 <details class="info-accordion">
                     <summary>Ingredients <span class="arrow-icon">▼</span></summary>
-                    <div class="accordion-content"><p>Ingredient list goes here.</p></div>
+                    <div class="accordion-content"><p>Whey Protein Isolate, Flavouring, Sweetener.</p></div>
                 </details>
 
                 <details class="info-accordion">
                     <summary>Nutrition Panels <span class="arrow-icon">▼</span></summary>
-                    <div class="accordion-content"><p>Table goes here.</p></div>
+                    <div class="accordion-content"><p>Protein: 27g | Carbs: 1g | Fats: 0.5g per serve.</p></div>
                 </details>
-
+                
                 <details class="info-accordion">
                     <summary>Lab Results <span class="arrow-icon">▼</span></summary>
                     <div class="accordion-content"><p>Lab results go here.</p></div>
@@ -118,41 +128,32 @@
                     <summary>Frequently Asked Questions <span class="arrow-icon">▼</span></summary>
                     <div class="accordion-content"><p>FAQ goes here.</p></div>
                 </details>
-
             </section>
+
         </div>
     </main>
 
     <footer>
         <div class="footer-section">
-            
             <nav class="info-column" aria-label="Information Links">
                 <h3>Information:</h3>
                 <ul>
                     <li><a href="#">About</a></li>
                     <li><a href="#">Shipping & Delivery</a></li>
                     <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Ambassador Application</a></li>
-                    <li><a href="#">Affiliate Application</a></li>
-                    <li><a href="#">Sustainability & the Environment</a></li>
                     <li><a href="#">Terms & Conditions</a></li>
-                    <li><a href="#">Subscribe & Save</a></li>
-                    <li><a href="#">Compare Supplements</a></li>
                 </ul>
             </nav>
-
             <nav class="footer-column" aria-label="Customer Service Links">
                 <h3>Customer Service:</h3>
                 <ul>
                     <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Visit Us</a></li>
                     <li><a href="#">Returns</a></li>
                 </ul>
             </nav>
-
         </div>
     </footer>
 
-    <script src="../js/product.js" defer></script>
+    <script src="../js/product2.js"></script>
 </body>
 </html>
