@@ -1,8 +1,7 @@
-
 body {
     margin: 0;
-    background-color: #92b9bd; 
-    background-image: url('../assets/hero.png'); 
+    background-color: #92b9bd;
+    background-image: url('../assets/hero.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -15,20 +14,6 @@ body {
     margin: 0 auto;
     width: 100%;
 }
-
-
-.hero-banner h1 {
-    font-family: 'Teko', sans-serif;
-    font-size: 8.5rem;
-    text-transform: uppercase;
-    color: #ffffff; 
-    margin: 0;
-    font-weight: 700;
-    letter-spacing: 2px;
-    line-height: 0.9;
-    text-shadow: 2px 4px 15px rgba(0, 0, 0, 0.4);
-}
-
 
 .hero-banner {
     padding: 120px 30px 60px 30px;
@@ -52,7 +37,7 @@ body {
     font-family: 'Teko', sans-serif;
     font-size: 8.5rem;
     text-transform: uppercase;
-    color: #ffffff; 
+    color: #ffffff;
     margin: 0;
     font-weight: 700;
     letter-spacing: 2px;
@@ -69,7 +54,7 @@ body {
 }
 
 .fitness-goals {
-    background-image: url('../assets/section.png'); 
+    background-image: url('../assets/section.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -79,12 +64,12 @@ body {
 
 .fitness-goals h2 {
     font-family: 'Teko', sans-serif;
-    color: #ffffff; 
+    color: #ffffff;
     margin: 0 0 50px 0;
     font-size: 4rem;
     font-weight: 700;
     letter-spacing: 1px;
-    text-shadow: 2px 4px 15px rgba(0, 0, 0, 0.6); 
+    text-shadow: 2px 4px 15px rgba(0, 0, 0, 0.6);
 }
 
 .goal-grid {
@@ -94,7 +79,7 @@ body {
     gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
-    height: 450px; 
+    height: 450px;
 }
 
 .goal-grid a {
@@ -108,9 +93,9 @@ body {
     color: white;
     font-size: 4rem;
     font-weight: 600;
-    line-height: 1; 
+    line-height: 1;
     text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5);
-    background: rgba(17, 20, 22, 0.35); 
+    background: rgba(17, 20, 22, 0.35);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.15);
@@ -137,4 +122,48 @@ body {
 .fade-up-item.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    body {
+        background-position: 85% top;
+    }
+    
+    .hero-banner {
+        padding: 40px 20px; 
+        min-height: 450px;
+        align-items: center; 
+        text-align: center;
+        justify-content: center; 
+    }
+    
+    .hero-banner h1 {
+        font-size: 4.5rem;
+        letter-spacing: 1px;
+    }
+    
+    .hero-banner p {
+        font-size: 1.5rem;
+    }
+    
+    .fitness-goals {
+        padding: 60px 20px;
+    }
+    
+    .fitness-goals h2 {
+        font-size: 3rem;
+        margin-bottom: 30px;
+    }
+    
+    .goal-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        height: auto;
+        gap: 15px;
+    }
+    
+    .goal-grid a {
+        height: 120px;
+        font-size: 3rem;
+    }
 }

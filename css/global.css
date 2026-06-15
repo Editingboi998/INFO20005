@@ -65,7 +65,6 @@ header {
     filter: var(--filter-orange);
 }
 
-/* --- Search Bar --- */
 .header-search-container {
     flex-grow: 1; 
     background-color: #c4d6eb; 
@@ -271,3 +270,51 @@ footer {
     padding-left: 40px;
     border-left: 4px solid var(--brand-orange);
 }
+
+@media (max-width: 768px) {
+    header {
+        padding: 12px 20px;
+    }
+    
+    .top-nav-bar {
+        flex-wrap: nowrap; 
+        gap: 15px;
+    }
+    
+    .brand-logo img {
+        height: 24px;
+    }
+    
+    .header-search-container {
+        flex-grow: 0;
+        margin-left: auto; 
+        background-color: transparent;
+        padding: 0;
+    }
+    
+    .header-search-container input {
+        display: none; 
+    }
+    
+    .search-glass-icon {
+        margin-right: 0;
+        width: 25px !important; 
+    }
+    
+    .footer-section {
+        flex-direction: column;
+        gap: 30px;
+        align-items: flex-start;
+        padding-left: 10px;
+    }
+    
+    .footer-section h3 {
+        font-size: 2rem;
+        margin-bottom: 5px;
+    }
+    
+    .side-menu {
+        width: 85vw;
+    }
+}
+

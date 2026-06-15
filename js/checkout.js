@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    let shippingCost = 0; 
+    const shippingCost = 10.00; 
 
     const itemsListContainer = document.getElementById('checkout-items-list');
     const subtotalDisplay = document.getElementById('summary-subtotal');
@@ -42,11 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let grandTotal = subtotal + shippingCost;
 
         if (subtotalDisplay) subtotalDisplay.textContent = `$${subtotal.toFixed(2)}`;
-        
-        if (shippingDisplay) {
-            shippingDisplay.textContent = shippingCost > 0 ? `$${shippingCost.toFixed(2)}` : 'Calculated at next step';
-        }
-        
+        if (shippingDisplay) shippingDisplay.textContent = `$${shippingCost.toFixed(2)}`;
         if (grandTotalDisplay) grandTotalDisplay.textContent = `$${grandTotal.toFixed(2)}`;
     }
 
@@ -68,11 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (isSectionValid) {
                 currentStep.classList.remove('active');
                 currentStep.classList.add('completed');
-
-                if (currentStep.id === 'step-shipping') {
-                    shippingCost = 10.00;
-                    renderOrderSummary();
-                }
 
                 const nextStep = currentStep.nextElementSibling;
                 

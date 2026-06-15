@@ -3,11 +3,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const cartContainer = document.querySelector('.cart-items-container');
     const grandTotalDisplay = document.getElementById('grand-total');
 
-    // Master function to draw the cart based on LocalStorage
     function renderCart() {
         let cart = JSON.parse(localStorage.getItem('aminoZCart')) || [];
         
-        // Clear the container
+
         cartContainer.innerHTML = '';
         let currentGrandTotal = 0;
 
@@ -17,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // Loop through the data and build the HTML for each item
         cart.forEach((item, index) => {
             const lineTotal = item.price * item.quantity;
             currentGrandTotal += lineTotal;
@@ -56,7 +54,6 @@ document.addEventListener('DOMContentLoaded', () => {
         attachCartEventListeners();
     }
 
-    // Function to re-bind the buttons after the HTML is injected
     function attachCartEventListeners() {
         let cart = JSON.parse(localStorage.getItem('aminoZCart')) || [];
         const quantityControls = document.querySelectorAll('.quantity-controls');
@@ -72,11 +69,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (currentVal > 1) {
                     cart[index].quantity = currentVal - 1;
                 } else {
-                    // Optional: remove item if it drops below 1
+
                     cart.splice(index, 1); 
                 }
                 localStorage.setItem('aminoZCart', JSON.stringify(cart));
-                renderCart(); // Redraw the whole cart instantly
+                renderCart(); 
             });
 
             plusBtn.addEventListener('click', () => {
@@ -99,7 +96,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Overlay functionality ---
     const closeBtn = document.querySelector('.close-cart-btn');
     if (closeBtn) {
         closeBtn.addEventListener('click', () => {
@@ -111,6 +107,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Initial render when cart page loads
+
     renderCart();
 });
