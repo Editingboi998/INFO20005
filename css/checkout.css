@@ -1,52 +1,49 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Teko:wght@400;600;700&display=swap');
 
-  background-image: url("https://static.where-e.com/Australia/Amino-Z_c3ce0b183405caf6699c0a434b4b74ae.jpg");
-
-  background-size: cover; 
-
-  background-position: center; 
-
-  background-repeat: no-repeat; 
-
-  background-attachment: fixed; 
-
-  background-color: #cccccc; 
+* {
+    box-sizing: border-box;
 }
 
+body {
+    margin: 0;
+    background: linear-gradient(135deg, #9bbbc0 0%, #759c9d 100%); 
+    background-attachment: fixed; 
+    font-family: 'Montserrat', sans-serif;
+}
 
-/* --- checkout layout --- */
+.brand-logo img {
+    max-height: 45px;   
+    max-width: 100%;     
+    object-fit: contain; 
+}
+
 .checkout-page-main {
     max-width: 600px;
     margin: 40px auto;
-    padding: 0 20px;
-    font-family: sans-serif;
-    
+    padding: 10px 20px;
 }
 
 .checkout-step {
-    border: 1px solid #ccc;
+    border: none;
     margin-bottom: 15px;
-    border-radius: 4px;
+    border-radius: 8px; 
     overflow: hidden;
     background: #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
     transition: all 0.3s ease;
 }
 
-
-
-/* locked state */
 .checkout-step.locked {
-    opacity: 0.5;
+    opacity: 0.6;
     pointer-events: none; 
     background: #f9f9f9;
 }
 
-/* header clickable */
 .step-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #1a1a1a; 
+    background-color: #1a1e21; 
     color: white;
     padding: 15px 20px;
     cursor: default; 
@@ -54,17 +51,24 @@ body {
 
 .step-header h2 {
     margin: 0;
-    font-size: 1.2rem;
+    font-family: 'Teko', sans-serif;
+    font-size: 1.8rem; 
+    letter-spacing: 0.5px;
 }
 
-/* edit button */
 .checkout-step .edit-btn {
     display: none;
-    color: #ff6a00; /* Amino Z Orange */
+    color: #ff6a00; 
+    font-family: 'Montserrat', sans-serif;
     font-size: 0.9rem;
     font-weight: bold;
     text-transform: uppercase;
     cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.checkout-step .edit-btn:hover {
+    color: white;
 }
 
 .checkout-step.completed .edit-btn {
@@ -75,15 +79,13 @@ body {
     cursor: pointer;
 }
 
-/* --- animation --- */
 .step-content {
     display: none; 
-    padding: 20px;
+    padding: 25px;
 }
 
 .checkout-step.active .step-content {
     display: block;
-
     animation: smoothReveal 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
@@ -98,7 +100,6 @@ body {
     }
 }
 
-/* styling */
 .input-group {
     margin-bottom: 15px;
     display: flex;
@@ -107,17 +108,25 @@ body {
 
 .input-group label {
     margin-bottom: 5px;
-    color: #000000;
-    font-weight: bold;
+    color: #111;
+    font-weight: 700;
     font-size: 0.9rem;
 }
 
 .input-group input, 
 .input-group textarea {
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus, 
+.input-group textarea:focus {
+    outline: none;
+    border-color: #ff6a00; 
 }
 
 .payment-row {
@@ -130,36 +139,27 @@ body {
 }
 
 .confirm-btn, .place-order-btn {
-    background-color: #50817F;
+    background-color: #ff6a00; 
     color: white;
     border: none;
-    padding: 12px 20px;
+    padding: 15px 20px;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
-    font-weight: bold;
-    border-radius: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 6px;
     cursor: pointer;
     width: 100%;
     margin-top: 10px;
-    transition: background-color 0.2s;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .confirm-btn:hover, .place-order-btn:hover {
     background-color: #e65c00;
-}
-
-/* mobile reponsivemess */
-* {
-    box-sizing: border-box;
-}
-
-.brand-logo img {
-    max-height: 45px;   
-    max-width: 100%;     
-    object-fit: contain; 
+    transform: translateY(-2px);
 }
 
 @media (max-width: 450px) {
-    
     .checkout-page-main {
         margin: 20px auto;
         padding: 0 15px; 

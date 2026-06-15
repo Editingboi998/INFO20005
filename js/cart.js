@@ -1,95 +1,116 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    const cartItems = document.querySelectorAll('.cart-item');
+    const cartContainer = document.querySelector('.cart-items-container');
     const grandTotalDisplay = document.getElementById('grand-total');
 
-    function updateCartTotals() {
+    // Master function to draw the cart based on LocalStorage
+    function renderCart() {
+        let cart = JSON.parse(localStorage.getItem('aminoZCart')) || [];
+        
+        // Clear the container
+        cartContainer.innerHTML = '';
         let currentGrandTotal = 0;
 
-        cartItems.forEach(item => {
-            const basePrice = parseFloat(item.getAttribute('data-price'));
-            const qtyInput = item.querySelector('.qty-input');
-            const lineTotalDisplay = item.querySelector('.line-total');
-            
-            let qty = parseInt(qtyInput.value);
-            if (isNaN(qty) || qty < 1) {
-                qty = 1;
-                qtyInput.value = 1;
-            }
+        if (cart.length === 0) {
+            cartContainer.innerHTML = '<p style="color: white; font-family: Montserrat; font-weight: 600; text-align: center; padding: 40px;">Your cart is empty.</p>';
+            if(grandTotalDisplay) grandTotalDisplay.textContent = '0.00';
+            return;
+        }
 
-            const lineTotal = basePrice * qty;
-            
-            if (lineTotalDisplay) {
-                lineTotalDisplay.textContent = lineTotal.toFixed(2);
-            }
-
+        // Loop through the data and build the HTML for each item
+        cart.forEach((item, index) => {
+            const lineTotal = item.price * item.quantity;
             currentGrandTotal += lineTotal;
+
+            const article = document.createElement('article');
+            article.className = 'cart-item';
+            
+            article.innerHTML = `
+                <div class="cart-item-image">
+                    <img src="${item.image}" alt="${item.name}">
+                </div>
+                
+                <div class="cart-item-details">
+                    <h3 class="item-title"><a href="product.html">${item.name} - ${item.flavor}</a></h3>
+                    
+                    <div class="item-bottom-row">
+                        <div class="qty-wrapper">
+                            <span class="qty-label">Quantity:</span>
+                            <div class="quantity-controls" data-index="${index}">
+                                <button type="button" class="qty-btn minus-btn">-</button>
+                                <input type="number" class="qty-input" value="${item.quantity}" min="1">
+                                <button type="button" class="qty-btn plus-btn">+</button>
+                            </div>
+                        </div>
+                        <div class="item-total">Total: $<span class="line-total">${lineTotal.toFixed(2)}</span></div>
+                    </div>
+                </div>
+            `;
+            cartContainer.appendChild(article);
         });
 
         if (grandTotalDisplay) {
             grandTotalDisplay.textContent = currentGrandTotal.toFixed(2);
         }
+
+        attachCartEventListeners();
     }
 
-    cartItems.forEach(item => {
-        const minusBtn = item.querySelector('.minus-btn');
-        const plusBtn = item.querySelector('.plus-btn');
-        const qtyInput = item.querySelector('.qty-input');
+    // Function to re-bind the buttons after the HTML is injected
+    function attachCartEventListeners() {
+        let cart = JSON.parse(localStorage.getItem('aminoZCart')) || [];
+        const quantityControls = document.querySelectorAll('.quantity-controls');
 
-        if (minusBtn && plusBtn && qtyInput) {
+        quantityControls.forEach(control => {
+            const index = control.getAttribute('data-index');
+            const minusBtn = control.querySelector('.minus-btn');
+            const plusBtn = control.querySelector('.plus-btn');
+            const qtyInput = control.querySelector('.qty-input');
+
             minusBtn.addEventListener('click', () => {
                 let currentVal = parseInt(qtyInput.value);
                 if (currentVal > 1) {
-                    qtyInput.value = currentVal - 1;
-                    updateCartTotals();
+                    cart[index].quantity = currentVal - 1;
+                } else {
+                    // Optional: remove item if it drops below 1
+                    cart.splice(index, 1); 
                 }
+                localStorage.setItem('aminoZCart', JSON.stringify(cart));
+                renderCart(); // Redraw the whole cart instantly
             });
 
             plusBtn.addEventListener('click', () => {
                 let currentVal = parseInt(qtyInput.value);
-                qtyInput.value = currentVal + 1;
-                updateCartTotals();
-            });
-
-            qtyInput.addEventListener('input', () => {
-                updateCartTotals();
+                cart[index].quantity = currentVal + 1;
+                localStorage.setItem('aminoZCart', JSON.stringify(cart));
+                renderCart();
             });
 
             qtyInput.addEventListener('blur', () => {
-                updateCartTotals(); 
+                let currentVal = parseInt(qtyInput.value);
+                if (isNaN(currentVal) || currentVal < 1) {
+                    cart[index].quantity = 1;
+                } else {
+                    cart[index].quantity = currentVal;
+                }
+                localStorage.setItem('aminoZCart', JSON.stringify(cart));
+                renderCart();
             });
-        }
-    });
+        });
+    }
 
+    // --- Overlay functionality ---
     const closeBtn = document.querySelector('.close-cart-btn');
-    
     if (closeBtn) {
         closeBtn.addEventListener('click', () => {
             if (window.history.length > 1) {
                 window.history.back();
             } else {
-                window.location.href = 'index.html';
+                window.location.href = 'homepage.html';
             }
         });
     }
 
-    const quickAddBtns = document.querySelectorAll('.quick-add-btn');
-    
-    quickAddBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            this.textContent = '✓';
-            this.style.backgroundColor = '#27ae60';
-            this.style.borderColor = '#27ae60';
-            this.style.color = 'white';
-            
-            setTimeout(() => {
-                this.textContent = '+';
-                this.style.backgroundColor = 'transparent';
-                this.style.borderColor = '#ff6a00';
-                this.style.color = '#ff6a00';
-            }, 1500);
-        });
-    });
-
-    updateCartTotals();
+    // Initial render when cart page loads
+    renderCart();
 });

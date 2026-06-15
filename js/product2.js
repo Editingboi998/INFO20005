@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const addToCartForm = document.getElementById('add-to-cart-form');
     const addToCartBtn = document.querySelector('.add-to-cart-btn');
     
-    const basePrice = 69.99; 
+    // Set to the WPI base price
+    const basePrice = 84.99; 
 
     function updatePrice() {
         if (priceDisplay && qtyInput) {
@@ -53,7 +54,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const quantity = parseInt(qtyInput.value);
             const imageSrc = document.getElementById('main-product-image').src;
             
-            const productId = `amino-z-sig-whey-${flavor.toLowerCase()}`;
+            // Differentiates WPI from regular whey in the cart
+            const productId = `amino-z-sig-wpi-${flavor.toLowerCase()}`;
 
             const cartItem = {
                 id: productId,
