@@ -1,17 +1,63 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // confirm
+    let shippingCost = 0; 
+
+    const itemsListContainer = document.getElementById('checkout-items-list');
+    const subtotalDisplay = document.getElementById('summary-subtotal');
+    const shippingDisplay = document.getElementById('summary-shipping');
+    const grandTotalDisplay = document.getElementById('summary-grand-total');
+
+    function renderOrderSummary() {
+        let cart = JSON.parse(localStorage.getItem('aminoZCart')) || [];
+        let subtotal = 0;
+
+        if (cart.length === 0 && itemsListContainer) {
+            itemsListContainer.innerHTML = '<p>Your cart is empty.</p>';
+            return;
+        }
+
+        if (itemsListContainer) {
+            itemsListContainer.innerHTML = ''; 
+
+            cart.forEach(item => {
+                const lineTotal = item.price * item.quantity;
+                subtotal += lineTotal;
+
+                const itemHTML = `
+                    <div class="summary-item">
+                        <div class="summary-item-img">
+                            <img src="${item.image}" alt="${item.name}">
+                        </div>
+                        <div class="summary-item-info">
+                            <h3 class="summary-item-title">${item.name}</h3>
+                            <p class="summary-item-variant">${item.flavor} x ${item.quantity}</p>
+                        </div>
+                        <div class="summary-item-price">$${lineTotal.toFixed(2)}</div>
+                    </div>
+                `;
+                itemsListContainer.insertAdjacentHTML('beforeend', itemHTML);
+            });
+        }
+
+        let grandTotal = subtotal + shippingCost;
+
+        if (subtotalDisplay) subtotalDisplay.textContent = `$${subtotal.toFixed(2)}`;
+        
+        if (shippingDisplay) {
+            shippingDisplay.textContent = shippingCost > 0 ? `$${shippingCost.toFixed(2)}` : 'Calculated at next step';
+        }
+        
+        if (grandTotalDisplay) grandTotalDisplay.textContent = `$${grandTotal.toFixed(2)}`;
+    }
+
     const confirmButtons = document.querySelectorAll('.confirm-btn');
 
     confirmButtons.forEach(button => {
         button.addEventListener('click', function() {
-            
             const currentStep = this.closest('.checkout-step');
-
             const inputs = currentStep.querySelectorAll('input[required], textarea[required]');
             let isSectionValid = true;
 
-            // empty field
             inputs.forEach(input => {
                 if (!input.checkValidity()) {
                     input.reportValidity(); 
@@ -19,41 +65,48 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
 
-            // when filled
             if (isSectionValid) {
-                
                 currentStep.classList.remove('active');
                 currentStep.classList.add('completed');
 
+                if (currentStep.id === 'step-shipping') {
+                    shippingCost = 10.00;
+                    renderOrderSummary();
+                }
+
                 const nextStep = currentStep.nextElementSibling;
                 
-                // open next section
                 if (nextStep && nextStep.classList.contains('checkout-step')) {
                     nextStep.classList.remove('locked');
                     nextStep.classList.add('active');
                 }
             }
-
-});        });
+        });
     });
 
-    // going back to edit
     const stepHeaders = document.querySelectorAll('.step-header');
 
     stepHeaders.forEach(header => {
         header.addEventListener('click', function() {
             const clickedStep = this.closest('.checkout-step');
             
-            // only let them open it if they've already completed it
             if (clickedStep.classList.contains('completed')) {
-                
                 document.querySelectorAll('.checkout-step.active').forEach(step => {
                     step.classList.remove('active');
                 });
 
-                // open the one they just clicked
                 clickedStep.classList.add('active');
                 clickedStep.classList.remove('completed'); 
             }
         });
     });
+
+    renderOrderSummary();
+
+    const checkoutForm = document.getElementById('checkout-form');
+    if (checkoutForm) {
+        checkoutForm.addEventListener('submit', () => {
+            localStorage.removeItem('aminoZCart');
+        });
+    }
+});

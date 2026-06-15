@@ -9,6 +9,23 @@
 </head>
 <body>
 
+<div class="menu-overlay" id="menu-overlay"></div>
+
+    <aside class="side-menu" id="side-menu">
+        <div class="side-menu-header">
+            <img src="https://www.aminoz.com.au/media/buyshop/default/logo2604a.png" alt="Amino Z Logo" class="side-menu-logo">
+            <button type="button" class="close-menu-btn" id="close-menu-btn" aria-label="Close menu">✕</button>
+        </div>
+        <nav class="side-menu-nav">
+            <a href="homepage.html">Home</a>
+            <a href="results.html">Shop All Protein</a>
+            <a href="results.html">Pre-Workout</a>
+            <a href="results.html">Vitamins & Wellness</a>
+            <a href="search.html">Search Products</a>
+            <a href="cart.html">Your Cart</a>
+        </nav>
+    </aside>
+
     <header>
         <nav aria-label="Main Navigation" class="top-nav-bar">
             <button class="menu-toggle" aria-label="Open Menu">
@@ -25,7 +42,10 @@
             </div>
             
             <a href="cart.html" class="cart-link" aria-label="Cart">
-                <img src="https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/all-3/shopping-cart-9xhllmo2cb79djc9j7b5kb.png/shopping-cart-pe974q2wd8bzu5cueg3qr.png?_a=DATAiZAAZAA0" alt="Cart icon">
+                <div class="cart-icon-wrapper">
+                    <img src="https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/all-3/shopping-cart-9xhllmo2cb79djc9j7b5kb.png/shopping-cart-pe974q2wd8bzu5cueg3qr.png?_a=DATAiZAAZAA0" alt="Cart icon">
+                    <span class="cart-badge" id="cart-badge">0</span>
+                </div>
             </a>
         </nav>
     </header>
@@ -155,5 +175,6 @@
     </footer>
 
     <script src="../js/product2.js"></script>
+    <script src="../js/global.js"></script>
 </body>
 </html>

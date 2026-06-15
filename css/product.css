@@ -1,13 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Teko:wght@400;600;700&display=swap');
-
-* {
-    box-sizing: border-box;
-}
-
 body {
     background: linear-gradient(135deg, #9bbbc0 0%, #759c9d 100%); 
-    margin: 0;
-    font-family: 'Montserrat', sans-serif; 
 }
 
 .product-page-main {
@@ -19,79 +11,6 @@ body {
 .page-content-wrapper {
     max-width: 1200px;
     margin: 0 auto;
-}
-
-header {
-    padding: 12px 30px; 
-    background-color: rgba(17, 20, 22, 0.95); 
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-.top-nav-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px; 
-    max-width: 1200px; 
-    margin: 0 auto;
-}
-
-.brand-logo img {
-    height: 30px; 
-    display: block;
-}
-
-.menu-toggle, .cart-link {
-    background: transparent;
-    border: none;
-    padding: 5px; 
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.menu-toggle img, .cart-link img {
-    width: 25px;
-    filter: var(--filter-teal, invert(68%) sepia(13%) saturate(1142%) hue-rotate(137deg) brightness(91%) contrast(85%));
-    transition: transform 0.2s ease, filter 0.2s ease;
-}
-
-.menu-toggle:hover img, .cart-link:hover img {
-    transform: scale(1.1);
-    filter: var(--filter-orange, invert(45%) sepia(91%) saturate(3015%) hue-rotate(9deg) brightness(101%) contrast(106%));
-}
-
-.header-search-container {
-    flex-grow: 1; 
-    background-color: #c4d6eb; 
-    display: flex;
-    align-items: center;
-    padding: 5px 15px; 
-    border-radius: 4px; 
-    height: 36px; 
-}
-
-.search-glass-icon {
-    width: 15px !important; 
-    filter: var(--filter-teal, invert(68%) sepia(13%) saturate(1142%) hue-rotate(137deg) brightness(91%) contrast(85%));
-    margin-right: 10px; 
-    cursor: pointer;
-}
-
-.header-search-container input {
-    background: transparent;
-    border: none;
-    outline: none;
-    width: 100%;
-    color: #111;
-    font-family: 'Montserrat', sans-serif; 
-    font-weight: 600;
 }
 
 .split-layout-container {
@@ -369,44 +288,6 @@ select:focus, .qty-btn:focus, #quantity-input:focus {
 
 .info-accordion[open] .arrow-icon {
     transform: rotate(180deg);
-}
-
-footer {
-    background-color: #0a0c0d;
-    padding: 40px 20px;
-}
-
-.footer-section {
-    display: flex;
-    justify-content: center; 
-    gap: 80px; 
-    font-family: 'Teko', sans-serif;
-}
-
-.footer-section h3 {
-    font-size: 2.2rem;
-    letter-spacing: 1px;
-    margin-bottom: 15px;
-    color: white;
-}
-
-.info-column ul, 
-.footer-column ul {
-    list-style-type: disc; 
-    padding-left: 20px;    
-    color: white;   
-    font-size: 1.4rem;
-    line-height: 1.6;
-}
-
-.footer-section a {
-    color: #999;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer-section a:hover {
-    color: #ff6a00;
 }
 
 @media (max-width: 900px) {

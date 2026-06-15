@@ -9,55 +9,35 @@
 </head>
 <body>
 
-    <header class="search-header">
-        <form action="results.html" method="GET" class="active-search-form">
-            
-            <div class="search-header-wrapper">
+    <header>
+        <form action="results.html" method="GET" style="width: 100%; margin: 0;">
+            <nav class="top-nav-bar">
                 
-                <a href="homepage.html" class="back-arrow" aria-label="Go back">
+                <button type="button" class="menu-toggle back-arrow" id="back-button" aria-label="Go back">
                     <img src="https://www.shareicon.net/data/512x512/2015/12/06/683324_arrows_512x512.png" alt="Back" style="transform: scaleX(-1);">
-                </a>
-                
-                <div class="input-container" style="flex-grow: 1; display: flex; align-items: center; position: relative;">
-                    
-                    <input type="text" id="main-search-bar" name="query" placeholder="Search for products..." aria-label="Search query" style="width: 100%;" autofocus>
-                    
-                    <button type="button" id="clear-btn" class="clear-search-btn" aria-label="Clear search">
-                        ✕
-                    </button>
-                    
-                </div>
-                
-                <button type="submit" class="search-icon" aria-label="Submit search" style="background: none; border: none;">
-                    <img src="https://cdn-icons-png.flaticon.com/512/54/54481.png" alt="Search icon">
                 </button>
-                
-            </div>
-            
+
+                <div class="header-search-container">
+                    <img src="https://cdn-icons-png.flaticon.com/512/54/54481.png" alt="Search icon" class="search-glass-icon" id="submit-search-icon">
+                    <input type="text" id="main-search-bar" name="query" placeholder="Search for products..." aria-label="Search query" autofocus>
+                    <button type="button" id="clear-btn" class="clear-search-btn" aria-label="Clear search">✕</button>
+                </div>
+
+            </nav>
         </form>
     </header>
     
     <main class="search-page-main">
-        
         <section class="popular-searches-section">
             <h1>Popular searches:</h1>
             
             <ul class="search-suggestions-list">
-                <li>
-                    <a href="results.html">Protein</a>
-                </li>
-                <li>
-                    <a href="results.html">Creatine</a>
-                </li>
-                <li>
-                    <a href="results.html">Electrolytes</a>
-                </li>
-                <li>
-                    <a href="results.html">Pre-Workout</a>
-                </li>
+                <li><a href="results.html">Protein</a></li>
+                <li><a href="results.html">Creatine</a></li>
+                <li><a href="results.html">Electrolytes</a></li>
+                <li><a href="results.html">Pre-Workout</a></li>
             </ul>
         </section>
-        
     </main>
 
     <script src="../js/search.js"></script>

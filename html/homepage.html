@@ -1,136 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amino Z - Homepage</title>
-    
-    <link rel="stylesheet" href="../css/global.css">
-    <link rel="stylesheet" href="../css/homepage.css">
-</head>
-
-<body> <header>
-        <nav aria-label="Main Navigation">
-            <button class="menu-toggle" aria-label="Open Menu">
-                <img src="https://static.thenounproject.com/png/683452-200.png" alt="Menu icon">
-            </button>
-            
-            <a href="homepage.html" class="brand-logo" aria-label="Home">
-                <img src="https://www.aminoz.com.au/media/buyshop/default/logo2604a.png" alt="Amino Z Logo">
-            </a>
-
-            <div class="header-controls">
-                <a href="search.html" class="search-toggle" aria-label="Search">
-                    <img src="https://cdn-icons-png.flaticon.com/512/54/54481.png" alt="Search icon" width="25">
-                </a>
-                
-                <a href="cart.html" class="cart-link" aria-label="Cart">
-                    <img src="https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/all-3/shopping-cart-9xhllmo2cb79djc9j7b5kb.png/shopping-cart-pe974q2wd8bzu5cueg3qr.png?_a=DATAiZAAZAA0" alt="Cart icon" width="25">
-                </a>
-            </div>
-        </nav>
-    </header>
-
-    <main>
-        
-        <section class="hero-banner">
-            <h1>SHOP NOW</h1>
-            <p>Our latest protein series</p>
-        </section>
-
-        <section class="fitness-goals">
-            <h2>What is your fitness goal?</h2>
-            
-            <nav class="goal-links" aria-label="Fitness Goals">
-                <ul>
-                    <li>
-                        <a href="results.html">
-                            Strength <span class="arrow-icon"><img src="https://www.shareicon.net/data/512x512/2015/12/06/683324_arrows_512x512.png" alt="Right arrow" width="10"></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="results.html">
-                            Weight Loss <span class="arrow-icon"><img src="https://www.shareicon.net/data/512x512/2015/12/06/683324_arrows_512x512.png" alt="Right arrow" width="10"></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="results.html">
-                            Wellness <span class="arrow-icon"><img src="https://www.shareicon.net/data/512x512/2015/12/06/683324_arrows_512x512.png" alt="Right arrow" width="10"></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="results.html">
-                            Accessories <span class="arrow-icon"><img src="https://www.shareicon.net/data/512x512/2015/12/06/683324_arrows_512x512.png" alt="Right arrow" width="10"></span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </section>
-
-        <section class="specific-search">
-            <h2>Something specific?</h2>
-            <a href="search.html" style="text-decoration: none; display: block; cursor: text;">
-                <div class="search-input">
-                    <input type="text" placeholder="Tap to search products..." readonly style="pointer-events: none;">
-                    <button type="button" aria-label="Submit search" style="pointer-events: none;">
-                        <img src="https://cdn-icons-png.flaticon.com/512/54/54481.png" alt="Search icon" width="10">
-                    </button>
-                </div>
-            </a>
-        </section>
-
-             alt search section
-<section class="specific-search">
-<h2>Something specific?</h2>
-<form action="{search results page}" method="GET">
-<div class="search-input">
-<input type="text" name="query" placeholder="" aria-label="Search for something specific">
-<button type="submit" aria-label="Submit search">
-<img src="https://cdn-icons-png.flaticon.com/512/54/54481.png" alt="Search icon" width="10">
-</button>
-</div>
-</form>
-</section> --> 
-
-  <!--  </main>
-
-    <footer>
-        <div class="footer-section">
-
-            
-            
-            <nav class="info-column" aria-label="Information Links">
-                <h3>Information:</h3>
-                <ul>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Shipping & Delivery</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Ambassador Application</a></li>
-                    <li><a href="#">Affiliate Application</a></li>
-                    <li><a href="#">Sustainability & the Environment</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
-                    <li><a href="#">Subscribe & Save</a></li>
-                    <li><a href="#">Compare Supplements</a></li>
-                </ul>
-            </nav>
-
-            <nav class="footer-column" aria-label="Customer Service Links">
-                <h3>Customer Service:</h3>
-                <ul>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Visit Us</a></li>
-                    <li><a href="#">Returns</a></li>
-                </ul>
-            </nav>
-
-        </div>
-    </footer>
-
-    <script src="../js/homepage.js"></script>
-</body>
-</html>
-
--->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -142,6 +9,23 @@
 </head>
 
 <body> 
+<div class="menu-overlay" id="menu-overlay"></div>
+
+    <aside class="side-menu" id="side-menu">
+        <div class="side-menu-header">
+            <img src="https://www.aminoz.com.au/media/buyshop/default/logo2604a.png" alt="Amino Z Logo" class="side-menu-logo">
+            <button type="button" class="close-menu-btn" id="close-menu-btn" aria-label="Close menu">✕</button>
+        </div>
+        <nav class="side-menu-nav">
+            <a href="homepage.html">Home</a>
+            <a href="results.html">Shop All Protein</a>
+            <a href="results.html">Pre-Workout</a>
+            <a href="results.html">Vitamins & Wellness</a>
+            <a href="search.html">Search Products</a>
+            <a href="cart.html">Your Cart</a>
+        </nav>
+    </aside>
+
     <header>
         <nav aria-label="Main Navigation" class="top-nav-bar">
             <button class="menu-toggle" aria-label="Open Menu">
@@ -158,7 +42,10 @@
             </div>
             
             <a href="cart.html" class="cart-link" aria-label="Cart">
-                <img src="https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/all-3/shopping-cart-9xhllmo2cb79djc9j7b5kb.png/shopping-cart-pe974q2wd8bzu5cueg3qr.png?_a=DATAiZAAZAA0" alt="Cart icon">
+                <div class="cart-icon-wrapper">
+                    <img src="https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/all-3/shopping-cart-9xhllmo2cb79djc9j7b5kb.png/shopping-cart-pe974q2wd8bzu5cueg3qr.png?_a=DATAiZAAZAA0" alt="Cart icon">
+                    <span class="cart-badge" id="cart-badge">0</span>
+                </div>
             </a>
         </nav>
     </header>
@@ -217,6 +104,7 @@
         </div>
     </footer>
 
+    <script src="../js/global.js"></script>
     <script src="../js/homepage.js"></script>
 </body>
 </html>
