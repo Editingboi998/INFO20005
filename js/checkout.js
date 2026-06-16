@@ -101,3 +101,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+    const cardInput = document.getElementById('card');
+    const expiryInput = document.getElementById('expiry');
+
+    if (cardInput) {
+        cardInput.addEventListener('input', function (e) {
+            let value = e.target.value.replace(/\D/g, '');
+
+            let formattedValue = value.replace(/(\d{4})(?=\d)/g, '$1 ');
+            
+            e.target.value = formattedValue;
+        });
+    }
+
+    if (expiryInput) {
+        expiryInput.addEventListener('input', function (e) {
+
+            let value = e.target.value.replace(/\D/g, '');
+
+            if (value.length > 2) {
+                e.target.value = value.substring(0, 2) + '/' + value.substring(2, 4);
+            } else {
+                e.target.value = value;
+            }
+        });
+    }
