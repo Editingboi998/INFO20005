@@ -79,6 +79,13 @@ select:focus {
 .product-card {
     display: flex;
     gap: 20px;
+    position: relative; 
+    transition: background-color 0.3s ease;
+}
+
+.product-card:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 8px; 
 }
 
 .product-image {
@@ -91,6 +98,8 @@ select:focus {
     align-items: center;
     padding: 10px;
     transition: transform 0.3s ease;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .product-card:hover .product-image {
@@ -130,6 +139,17 @@ select:focus {
     color: var(--brand-orange);
 }
 
+
+.product-details h2 a::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10; 
+}
+
 .price {
     color: white;
     font-family: 'Montserrat', sans-serif;
@@ -144,10 +164,11 @@ select:focus {
 
 .pagination-controls {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; 
+    gap: 30px; 
     align-items: center;
     font-family: 'Teko', sans-serif;
-    font-size: 1.8rem;
+    font-size: 2.2rem; 
     font-weight: 600;
     color: #111;
 }
@@ -155,12 +176,13 @@ select:focus {
 .page-text {
     color: #111;
     text-decoration: none;
-    transition: color 0.2s ease, text-shadow 0.2s ease;
+    transition: color 0.2s ease, text-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .page-text:hover {
     color: var(--brand-orange);
     text-shadow: 0 0 10px rgba(255, 106, 0, 0.4);
+    transform: scale(1.1);
 }
 
 @media (max-width: 768px) {
@@ -211,6 +233,7 @@ select:focus {
         padding: 20px 15px;
     }
     .pagination-controls {
-        font-size: 1.4rem;
+        font-size: 1.8rem;
+        gap: 15px; 
     }
 }

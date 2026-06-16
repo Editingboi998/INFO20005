@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- Fade Animations ---
     const fadeItems = document.querySelectorAll('.fade-up-item');
 
     const observerOptions = {
@@ -22,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
         fadeObserver.observe(item);
     });
 
-    // --- Touch Interactions ---
     const interactiveElements = document.querySelectorAll('a, button, .search-input');
 
     interactiveElements.forEach(el => {

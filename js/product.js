@@ -1,13 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
+    
+
+    const addToCartForm = document.getElementById('add-to-cart-form');
+    
+
+    if (!addToCartForm) return;
+
 
     const minusBtn = document.getElementById('qty-minus');
     const plusBtn = document.getElementById('qty-plus');
     const qtyInput = document.getElementById('quantity-input');
     const priceDisplay = document.getElementById('dynamic-price');
-    const addToCartForm = document.getElementById('add-to-cart-form');
     const addToCartBtn = document.querySelector('.add-to-cart-btn');
-    
-    const basePrice = 69.99; 
+
+    const basePrice = parseFloat(addToCartForm.dataset.price) || 69.99; 
+    const productBaseId = addToCartForm.dataset.productId || 'amino-z-product';
+
 
     function updatePrice() {
         if (priceDisplay && qtyInput) {
@@ -43,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    if (addToCartForm && addToCartBtn) {
+    if (addToCartBtn) {
         addToCartForm.addEventListener('submit', (e) => {
             e.preventDefault(); 
             
@@ -53,10 +61,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const quantity = parseInt(qtyInput.value);
             const imageSrc = document.getElementById('main-product-image').src;
             
-            const productId = `amino-z-sig-whey-${flavor.toLowerCase()}`;
+            const specificProductId = `${productBaseId}-${flavor.toLowerCase()}`;
 
             const cartItem = {
-                id: productId,
+                id: specificProductId,
                 name: productName,
                 flavor: flavor,
                 price: basePrice,
@@ -65,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
             };
 
             let cart = JSON.parse(localStorage.getItem('aminoZCart')) || [];
-            const existingItemIndex = cart.findIndex(item => item.id === productId);
+            const existingItemIndex = cart.findIndex(item => item.id === specificProductId);
 
             if (existingItemIndex > -1) {
                 cart[existingItemIndex].quantity += quantity;
@@ -83,22 +91,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 addToCartBtn.classList.remove('success');
                 addToCartBtn.textContent = originalText;
             }, 2000);
-        });
-    }
-    
-    const searchInput = document.querySelector('.header-search-container input');
-    const searchIcon = document.querySelector('.search-glass-icon');
-
-    if (searchInput && searchIcon) {
-        function executeSearch() {
-            window.location.href = 'results.html';
-        }
-        searchIcon.addEventListener('click', executeSearch);
-        searchInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                executeSearch();
-            }
         });
     }
 });
