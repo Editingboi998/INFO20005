@@ -3,16 +3,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.querySelector('.header-search-container input');
     const searchIcon = document.querySelector('.search-glass-icon');
 
+    function getPagePath(pageName) {
+
+        if (window.location.pathname.includes('/html/')) {
+            return pageName;
+        } else {
+            return 'html/' + pageName;
+        }
+    }
+
     if (searchInput && searchIcon) {
         searchInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') {
                 e.preventDefault(); 
-                window.location.href = 'results.html';
+                window.location.href = getPagePath('results.html');
             }
         });
 
         searchIcon.addEventListener('click', () => {
-            window.location.href = 'search.html';
+            window.location.href = getPagePath('search.html');
         });
     }
 
